@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+
+{% block konten %}
+<style>
+    body{
+        background: linear-gradient(to right, #66cbed, #05a2c9);
+    }
+    table{
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-top: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    a{
+        color: black;
+        text-decoration: none;
+    }
+    table tr.judul{
+        display: contents;
+        justify-content: space-around;
+    }
+    th{
+        width: 1000px;
+    }
+    h1{
+        text-align: center;
+        color: black;
+        margin-top: 10px;
+        text-shadow: 5px 5px 10px gold;
+    }
+    button{
+        background-color: green;
+    }
+    button a{
+        color: white;
+        font-size: 14px;
+    }
+    button a:hover{
+        color: lightgray;
+        font-size: 12px;
+    }
+</style>
+<h1>DATA KEGEMARAN PARA REMAJA</h1>
+    <table border="1">
+        <tr class="judul">
+            <th class="nama">Nama</th>
+            <th class="kelas">Kelas</th>
+            <th class="hobi">Hobi</th>
+            <th class="makanan">Makanan Favorite</th>
+            <th class="lagu">Lagu Favorite</th>
+            <th class="update">ReUpdate</th>
+        </tr>
+
+        {% for result in data %}
+        <tr>
+            <td >{{ result[1] }}</td>
+            <td >{{ result[2] }}</td>
+            <td >{{ result[3] }}</td>
+            <td >{{ result[4] }}</td>
+            <td >{{ result[5] }}</td>
+            <td> <button><a href="/update/{{ result[0] }}">UPDATE</a></button> - <button><a href="/hapus/{{ result[0] }}">DELETE</a></button> </td>
+        </tr>
+        {% endfor %}
+
+
+    </table>
+{% endblock %}

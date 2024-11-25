@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT X</title>
+</head>
+<style>
+    body{
+        background: linear-gradient(to right, #66cbed, #05a2c9);
+    }
+    .kotak1 {
+        margin-top: 30px;
+        margin-left: 400px;
+        width: 600px;
+        height: 200px;
+        background: linear-gradient(to right, #4abee5, #1cb0d5);
+        color: white;
+        text-shadow: 15px 15px 30px goldenrod;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        border-radius: 10px;
+    }
+
+    .teks1 {
+        position: absolute;
+        font-size: 100px;
+        white-space: nowrap;
+        animation: bergerak 5s linear infinite;
+    }
+
+    @keyframes bergerak {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+    button{
+        height: 50px;
+        background-color: green;
+        color: white;
+    }
+    div.container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .kotak2 {
+        margin-top: 0px;
+        margin-left: 240px;
+        margin-right: 50px;
+        width: 400px;
+        height: 100px;
+        background: linear-gradient(to right, #4abee5, #2cb0d5);
+        color: white;
+        text-shadow: 15px 15px 30px goldenrod;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        border-radius: 10px;
+    }
+
+    .teks2 {
+        position: absolute;
+        font-size: 70px;
+        margin-right: 100px;
+        white-space: nowrap;
+        animation: bergerak 5s linear infinite;
+    }
+    div.container button a{
+        text-decoration: none;
+        font-size: 17px;
+        color: white;
+    }
+    div.container button a:hover{
+        font-size: 15px;
+        color: lightgray;
+    }
+</style>
+<body>
+    {% extends 'layout.html' %}
+    {% block konten %}
+    <div class="kotak1">
+    <div class="teks1">THANK YOU FOR PARTICIPACING!!!!</div>
+    </div>
+    <div class="container">
+        <div class="kotak2">
+            <div class="teks2">CHECK YOUR DATA IN HERE ---->>></div>
+            </div>
+            <button><a href="{{ url_for('tampil' ) }}">CHECK</a></button>
+    </div>
+        
+    {% endblock %}
+</body>
+</html>

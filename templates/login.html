@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% block konten %}
+<style>
+    body{
+        background: linear-gradient(to right, #66cbed, #05a2c9);
+    }
+    h1{
+        text-align: center;
+        color: black;
+        margin-bottom: 30px;
+        text-shadow: 5px 5px 10px gold;
+    }
+    form{
+        margin-left: 20px;
+    }
+    input{
+        width: 1230px;
+    }
+    button.info{
+        margin-left: 20px;
+        color: aliceblue;
+        text-align: center;
+        color: black;
+        text-shadow: 3px 3px 10px goldenrod;
+    }
+    div.user{
+        margin-bottom: 20px;
+    }
+    button.sumbit{
+        margin-top: 20px;
+        background-color: green;
+        color: white;
+    }
+</style>
+<h1>LOGIN</h1>
+<form action="/aksi_login" method="post">
+    <div class="user">
+        <label for="user">USERNAME: </label>
+        <input type="text" id="user"name="username">
+    </div>
+    <div class="pass">
+        <label for="pass">PASSWORD: </label>
+        <input type="password" id="pass" name="password"></div>
+    <button class="sumbit" type ="submit">LOGIN</button>
+</form>
+<hr>
+<button class="info"><i>info-login <br>username : admin <br>password : 4321</i></button>
+{% endblock %}

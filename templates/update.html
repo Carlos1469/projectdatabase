@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+{% block konten %}
+<style>
+    body{
+        background: linear-gradient(to right, #66cbed, #05a2c9);
+    }
+    h1{
+        text-align: center; 
+        color:rgb(96, 10, 10);
+        text-shadow: 3px 3px 10px goldenrod;
+    }
+    input{
+        width: 1230px;
+    }
+    textarea{
+        width: 1230px;
+        height: 30px;
+    }
+    label{
+        margin-left: 15px;
+    }
+    div.nama{
+        margin-left: 15px;
+        margin-bottom: 10px;
+    }
+    div.kelas{
+        margin-left: 15px;
+        margin-bottom: 10px;
+    }
+    div.hobi{
+        margin-left: 15px;
+        margin-bottom: 10px;
+    }
+    div.makanan{
+        margin-left: 15px;
+        margin-bottom: 10px;
+    }
+    div.lagu{
+        margin-left: 15px;
+        margin-bottom: 10px;
+    }
+    div.makanan{
+        margin-left: 15px;
+        margin-bottom: 10px;
+    }
+    div.lagu{
+        margin-left: 15px;
+        margin-bottom: 10px;
+    }
+</style>
+    <h1>INPUT DATA KEGEMARANMU</h1>
+    <form action="/aksiupdate" method="post" >
+        <label>NAMA:</label>
+        <div class="nama">
+            <input type="hidden" name="id" placeholder="Enter nama" value="{{ value[0] }}" >
+        <input type="text" name="nama" placeholder="Enter nama" value="{{ value[1] }}" ><br>
+        </div>
+        <label>KELAS:</label>
+        <div class="kelas">
+            <input type="number" name="kelas" min="10" max="12"  placeholder="Enter kelas" value="{{ value[2] }}"><br>
+        </div>
+        <label>HOBI:</label>
+        <div class="hobi">
+            <textarea name="hobi" placeholder="Enter hobi" >{{ value[3] }}</textarea><br>
+        </div>
+        <label>MAKANAN FAVORITE:</label>
+        <div class="makanan">  <textarea name="makanan_favorite" placeholder="Enter makanan favorite" >{{ value[4] }}</textarea><br>
+        </div>
+        <label>LAGU FAVORITE:</label>
+        <div class="lagu">        <textarea name="lagu_favorite" placeholder="Enter lagu favorite" >{{ value[5] }}</textarea><br>
+        </div>
+            <button class="sumbit" type="submit" style="background-color: green; color: white;
+        margin-left: 15px;">KIRIM</button>
+    </form>
+{% endblock %}

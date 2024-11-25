@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block konten %}
+<style>
+    body{
+        background: linear-gradient(to right, #000000, #3d3c3c);
+    }
+    .kotak {
+        margin-top: 150px;
+        margin-left: 400px;
+        width: 600px;
+        height: 200px;
+        background: linear-gradient(to right, #000000, #3d3c3c);
+        color: white;
+        text-shadow: 15px 15px 30px goldenrod;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        border-radius: 10px;
+    }
+
+    .teks {
+        position: absolute;
+        font-size: 100px;
+        white-space: nowrap;
+        animation: bergerak 5s linear infinite;
+    }
+
+    @keyframes bergerak {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+</style>
+<div class="kotak">
+    <div class="teks">WELCOME TO OUR WEBSITE!!!!</div>
+</div>
+{% endblock %}
